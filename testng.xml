@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--Set thread-count = 3 to execute test parallel in 3 max browsers at at time. You can increase it--> 
+<suite name="Functional Test Suite_Chrome" verbose="1" thread-count="1">
+  <test name="Test">
+ <classes> 				
+		<class name="helpers.RunTest"></class>	
+</classes>
+ 
+</test> 
+
+</suite> <!-- Suite -->
