@@ -1,31 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="103202" started-at="2018-02-16T14:59:59Z" finished-at="2018-02-16T15:01:43Z">
+  <suite name="Functional Test Suite_Chrome" duration-ms="63597" started-at="2018-02-23T05:56:24Z" finished-at="2018-02-23T05:57:28Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:helpers.RunTest@3754a4bf]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:helpers.RunTest@13805618]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="103202" started-at="2018-02-16T14:59:59Z" finished-at="2018-02-16T15:01:43Z">
+    <test name="Test" duration-ms="63597" started-at="2018-02-23T05:56:24Z" finished-at="2018-02-23T05:57:28Z">
       <class name="helpers.RunTest">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:helpers.RunTest@3754a4bf]" name="setUpClass" is-config="true" duration-ms="428" started-at="2018-02-16T20:29:59Z" finished-at="2018-02-16T20:30:00Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:helpers.RunTest@13805618]" name="setUpClass" is-config="true" duration-ms="313" started-at="2018-02-23T11:26:24Z" finished-at="2018-02-23T11:26:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:helpers.RunTest@3754a4bf]" name="feature" duration-ms="102446" started-at="2018-02-16T20:30:00Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-02-16T20:31:42Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:helpers.RunTest@13805618]" name="feature" duration-ms="63029" started-at="2018-02-23T11:26:25Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-02-23T11:27:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Men Basketball Search Result Count Verification]]>
+                <![CDATA[Men Basketball Test Cases feature]]>
               </value>
             </param>
           </params>
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[java.lang.NumberFormatException: For input string: " 7999"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: java.lang.NumberFormatException: For input string: " 7999"
+	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
+	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: java.lang.NumberFormatException: For input string: " 7999"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at Application_Pages.Men_BaseketBall_Shoes_Page.verifyPriceLowestToHighest_MenBaseketBallShoes(Men_BaseketBall_Shoes_Page.java:127)
+	at stepDefinitions.Adidas_Verify_Search_Criteria_Price_Low_To_High.verify_Products_are_shown_with_lower_to_hightest_price(Adidas_Verify_Search_Criteria_Price_Low_To_High.java:73)
+	at ✽.And Verify Products are shown with lower to hightest price(Adidasfeatures/Men Basketball Search Result Count Verification.feature:27)
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:helpers.RunTest@3754a4bf]" name="tearDownClass" is-config="true" duration-ms="167" started-at="2018-02-16T20:31:42Z" finished-at="2018-02-16T20:31:42Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:helpers.RunTest@13805618]" name="tearDownClass" is-config="true" duration-ms="124" started-at="2018-02-23T11:27:28Z" finished-at="2018-02-23T11:27:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

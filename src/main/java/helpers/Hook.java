@@ -24,9 +24,12 @@ public class Hook {
 
 	private static WebDriver driver;
 	
-	@Before("@web")
+	//@Before("@web")
+	@Before("@RegressionTest2")
 	public void setUp()
 	{
+		
+		System.out.println("This will run BEFORE any scenario defined in the feature file");
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//BrowsersExe//chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
@@ -39,6 +42,7 @@ public class Hook {
 	public void tearDown()
 	{
 		driver.quit();
+		System.out.println("This will run AFTER any scenario defined in the feature file");
 	}
 	
 	public static WebDriver getDriver()
