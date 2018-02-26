@@ -110,36 +110,60 @@ public class Men_BaseketBall_Shoes_Page {
 	
 	public boolean verifyPriceLowestToHighest_MenBaseketBallShoes()
 	{
-		int i,j;
 		boolean flag=true;
-		for(int k=0;k<hd_MenBBShoesPrice.size();k++)
-		{
-			String str1_BaseketBallPr=hd_MenBBShoesPrice.get(k).getText().trim();
-			String str1_BaseketBallPr2=str1_BaseketBallPr.replace("RS."," ");
-			String str1_BaseketBallPr3=str1_BaseketBallPr2.replace(",", "");
-			//.replace("Rs.", "").replace(",", "").trim();
-			basketBallShoesPrices1.add(str1_BaseketBallPr3);
-		}
-		System.out.println(basketBallShoesPrices1);
 		
-		for (i=1,j=0;i<basketBallShoesPrices1.size();i++,j++)
+		List<Integer> sortedPrices=new ArrayList<Integer>();
+		try
 		{
-			if(Integer.parseInt(basketBallShoesPrices1.get(i-1))<=Integer.parseInt(basketBallShoesPrices1.get(i)))
-			{
-				flag=true;
-				System.out.println(basketBallShoesPrices1.get(j));	
-				if(i==basketBallShoesPrices1.size()-1)
-					System.out.println(basketBallShoesPrices1.get(i));			
-			}		
-			else 
-			{
-				flag=false;
-				break;
-			}
+		
+			int i,j;
 			
+			for(int k=0;k<hd_MenBBShoesPrice.size();k++)
+				{
+					String str1_BaseketBallPr=hd_MenBBShoesPrice.get(k).getText().trim();
+					String str1_BaseketBallPr2=str1_BaseketBallPr.replace("RS."," ").trim();
+					String str1_BaseketBallPr3=str1_BaseketBallPr2.replace(",", "");
+		
+					basketBallShoesPrices1.add(str1_BaseketBallPr3);
+				}
+			System.out.println(basketBallShoesPrices1);
+		
+			for (i=1,j=0;i<basketBallShoesPrices1.size();i++,j++)
+				{
+					
+				int p =sortedPrices.get(i-1);
+				int n =sortedPrices.get(i);
+				//if(Integer.parseInt(basketBallShoesPrices1.get(i-1))<=Integer.parseInt(basketBallShoesPrices1.get(i)))
+				if(p<=n)
+						{
+							flag=true;
+							System.out.println(basketBallShoesPrices1.get(j));	
+							if(i==basketBallShoesPrices1.size()-1)
+								System.out.println(basketBallShoesPrices1.get(i));			
+						}		
+					else 
+					{
+						flag=false;
+						break;
+					}
+			
+		
+		
+		}
+			
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
 		}
 		return flag;
 		
+		
+		
+		
 	}
+	
+	
 }
 
