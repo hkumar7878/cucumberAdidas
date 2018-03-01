@@ -1,16 +1,18 @@
 package Application_Pages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import utility.ApplicationUtility;
+
 public class Adidas_Home_Page {
 	WebDriver driver;
+	ApplicationUtility appUtil;
 	
 	public Adidas_Home_Page(WebDriver driver) {
 		this.driver=driver;
@@ -23,6 +25,9 @@ public class Adidas_Home_Page {
 	@FindBy(how = How.XPATH, using = "//a[@id='MEN']") 
 	public WebElement men_Menu;
 	
+	@FindBy(how = How.XPATH, using = "//a[@id='WOMEN']") 
+	public WebElement women_Menu;
+	
 	@FindBy(how = How.XPATH, using = "//a[@id='MEN-FOOTWEAR']") 
 	public WebElement men_FootWearMenu;
 	
@@ -33,24 +38,49 @@ public class Adidas_Home_Page {
 	public WebElement txtBox_Search;
 	
 	
-	
 	public void verify_Adidas_Logo()
 	{
-		Assert.assertTrue(logo_Adidas.isDisplayed(), "PB home page is not displayed");
-		System.out.println("Adidas online store HOME Page is displayed successfully");
+		try
+		{
+			Assert.assertTrue(logo_Adidas.isDisplayed(), "PB home page is not displayed");
+			System.out.println("Adidas online store HOME Page is displayed successfully");
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 	
-	public void hover_Over_Men_Menu() throws InterruptedException
+	public void hover_Over_Menu(String menuType) throws InterruptedException
 	{
+		switch(menuType) {
 		
-		Actions Action= new Actions(driver);
-		Action.moveToElement(men_Menu).build().perform();
-		Thread.sleep(5000);
+		case "Men" :
+			appUtil.menuSelection(driver, men_FootWearMenu);
+			break;
+		case "Women": 		
+			appUtil.menuSelection(driver, women_Menu);
+			break;
+		default: 
+			System.out.println("Default Case");
+			
+		}
+		
 	}
 	
 	public void verify_Men_FootWear_Menu_Display()
 	{
 		//WebElement menWear=driver.findElement(By.xpath("//a[@id='MEN-FOOTWEAR']"));
+
+		Boolean flag=men_FootWearMenu.isDisplayed();
+		Assert.assertTrue(flag, "Men Wear drop down is not displayed");
+		System.out.println("Men Wear drop down is displayed successfully");
+	}
+	
+	public void verify_Women_Clothing_Menu_Display()
+	{
+		//WebElement menWear=driver.findElement(By.xpath("//a[@id='MEN-FOOTWEAR']"));
+
 		Boolean flag=men_FootWearMenu.isDisplayed();
 		Assert.assertTrue(flag, "Men Wear drop down is not displayed");
 		System.out.println("Men Wear drop down is displayed successfully");

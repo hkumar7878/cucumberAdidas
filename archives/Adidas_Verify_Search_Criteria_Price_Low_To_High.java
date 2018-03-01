@@ -37,7 +37,7 @@ public class Adidas_Verify_Search_Criteria_Price_Low_To_High {
 	
 	@And("^Hover over Men Menu$")
 		public void Hover_Over_Men_Menu() throws Throwable {
-		homePage.hover_Over_Menu("men");		
+		homePage.hover_Over_Men_Menu();		
 		}
 	
 	@Then("^Verify Men Menu opens$")

@@ -131,10 +131,10 @@ public class Men_BaseketBall_Shoes_Page {
 			for (i=1,j=0;i<basketBallShoesPrices1.size();i++,j++)
 				{
 					
-				int p =sortedPrices.get(i-1);
-				int n =sortedPrices.get(i);
-				//if(Integer.parseInt(basketBallShoesPrices1.get(i-1))<=Integer.parseInt(basketBallShoesPrices1.get(i)))
-				if(p<=n)
+				//int p =sortedPrices.get(i-1);
+				//int n =sortedPrices.get(i);
+				if(Integer.parseInt(basketBallShoesPrices1.get(i-1))<=Integer.parseInt(basketBallShoesPrices1.get(i)))
+				//if(p<=n)
 						{
 							flag=true;
 							System.out.println(basketBallShoesPrices1.get(j));	

@@ -23,9 +23,9 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 					//,glue={"helpers","classpath:stepDefinitions/Adidas_Mens_Basketball_Search_Count_Validation"}
 					,plugin = {"pretty", "html:target/cucumber"}
 					//, tags ={"@web"},	
-					, tags ={"~@RegressionTest1","@RegressionTest2"},
+					, tags ={"~@RegressionTest1","~@RegressionTest2","@RegressionTest3"},
 					//, tags ={"@RegressionTest","@FunctionalTest"}, 
-					dryRun=false
+					dryRun=true
 					,monochrome = false
 		)
 @Test
