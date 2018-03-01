@@ -14,7 +14,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 // @RunWith(Cucumber.class)
 
 @CucumberOptions(features={"classpath:Adidasfeatures"}  
-//Cucumber will automatically find all the ‘.features‘ extension files in the folder. 
+//Cucumber will automatically find all the ï¿½.featuresï¿½ extension files in the folder. 
 //@CucumberOptions(features={"classpath:Adidasfeatures/Men Basketball Search Result Count Verification.feature"}
 					//,glue={"src/test/java/stepdefinitions/GoogleSearch","Hook"}
 					//it's working fine
@@ -25,7 +25,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 					//, tags ={"@web"},	
 					, tags ={"~@RegressionTest1","~@RegressionTest2","@RegressionTest3"},
 					//, tags ={"@RegressionTest","@FunctionalTest"}, 
-					dryRun=true
+					dryRun=false
 					,monochrome = false
 		)
 @Test

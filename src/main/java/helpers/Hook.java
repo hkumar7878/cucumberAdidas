@@ -25,7 +25,7 @@ public class Hook {
 	private static WebDriver driver;
 	
 	//@Before("@web")
-	@Before("@RegressionTest2")
+	@Before("@RegressionTest3")
 	public void setUp()
 	{
 		

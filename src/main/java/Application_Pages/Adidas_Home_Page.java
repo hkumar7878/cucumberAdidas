@@ -9,10 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import utility.ApplicationUtility;
+import utility.GenericUtility;
 
 public class Adidas_Home_Page {
 	WebDriver driver;
-	ApplicationUtility appUtil;
+	//ApplicationUtility appUtil;
+	GenericUtility genUtil;
 	
 	public Adidas_Home_Page(WebDriver driver) {
 		this.driver=driver;
@@ -56,10 +58,11 @@ public class Adidas_Home_Page {
 		switch(menuType) {
 		
 		case "Men" :
-			appUtil.menuSelection(driver, men_FootWearMenu);
+			genUtil.menuSelection(driver, men_FootWearMenu);
 			break;
 		case "Women": 		
-			appUtil.menuSelection(driver, women_Menu);
+			//genUtil.menuSelection(driver, women_Menu);
+			genUtil.menuSelection(driver, women_Menu);
 			break;
 		default: 
 			System.out.println("Default Case");
