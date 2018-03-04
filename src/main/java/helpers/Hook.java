@@ -22,7 +22,7 @@ import cucumber.api.java.Before;
  */
 public class Hook {
 
-	private static WebDriver driver;
+public static WebDriver driver;
 	
 	//@Before("@web")
 	@Before("@RegressionTest3")

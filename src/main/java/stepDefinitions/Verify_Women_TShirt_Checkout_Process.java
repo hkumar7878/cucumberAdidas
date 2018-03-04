@@ -13,9 +13,9 @@ import Application_Pages.Men_BaseketBall_Shoes_Page;
 
 public class Verify_Women_TShirt_Checkout_Process {
 
-	private WebDriver driver;
+	public WebDriver driver;
 	Adidas_Home_Page homePage=new Adidas_Home_Page(driver);
-	Men_BaseketBall_Shoes_Page menBaseketBallShoesPg=new Men_BaseketBall_Shoes_Page(driver);
+	//Men_BaseketBall_Shoes_Page menBaseketBallShoesPg=new Men_BaseketBall_Shoes_Page(driver);
 	
 	public Verify_Women_TShirt_Checkout_Process() {
 		this.driver = Hook.getDriver();
@@ -33,9 +33,19 @@ public class Verify_Women_TShirt_Checkout_Process {
 	@Then("^Verify Adidas online store Home Page$")
 	public void Verify_Adidas_Online_Store_Home_Page() throws Throwable {
 				
+		try
+		{
 		System.out.println("Inside Adidas Online Store home page verification step");
-		homePage=new Adidas_Home_Page(driver);
+		//homePage=new Adidas_Home_Page(driver);
 		homePage.verify_Adidas_Logo();
+		}
+		
+		catch(Exception e)
+		
+		{
+			System.out.println(e.getMessage());
+			e.getStackTrace();
+		}
 	}
 	
 	@And("^Hover over Women Menu$")

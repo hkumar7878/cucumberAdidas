@@ -1,17 +1,19 @@
 package utility;
 
+import helpers.Hook;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
-public class ApplicationUtility {
+public class ApplicationUtility extends Hook {
 	WebDriver driver;
 	
-	public ApplicationUtility(WebDriver driver) {
+	/*public ApplicationUtility(WebDriver driver) {
 		this.driver=driver;
 	    
-	}
+	}*/
 	public void menuSelection(WebDriver driver,WebElement we)
 	{
 		

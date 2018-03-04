@@ -11,11 +11,15 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import utility.GenericUtility;
+import utility.GenericUtil;
+
+//import utility.GenericUtility;
 
 public class Men_BaseketBall_Shoes_Page {
 	
 	WebDriver driver;
+	
+	//GenericUtil 
 	
 	public Men_BaseketBall_Shoes_Page(WebDriver driver) {
 		this.driver=driver;
@@ -99,7 +103,7 @@ public class Men_BaseketBall_Shoes_Page {
 		{
 			System.out.println("Price low to high link is displayed");
 			lnk_PriceLowToHigh.click();
-			GenericUtility.wait_pageToLoad(driver,lnk_PriceLowToHigh,"elementClickable",10);
+			GenericUtil.wait_pageToLoad(driver,lnk_PriceLowToHigh,"elementClickable",10);
 		}
 		
 		else

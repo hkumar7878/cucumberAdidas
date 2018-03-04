@@ -1,6 +1,8 @@
 package Application_Pages;
 
 
+import helpers.Hook;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,15 +11,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import utility.ApplicationUtility;
-import utility.GenericUtility;
+import utility.GenericUtil;
+//import utility.GenericUtility;
 
-public class Adidas_Home_Page {
-	WebDriver driver;
-	//ApplicationUtility appUtil;
-	GenericUtility genUtil;
+public class Adidas_Home_Page extends Hook{
+	//public WebDriver driver;
+	//String s1:
+	ApplicationUtility appUtil;
+	GenericUtil genUtil;
 	
 	public Adidas_Home_Page(WebDriver driver) {
-		this.driver=driver;
+		//this.driver = Hook.getDriver();
+		this.driver = driver;
 	    PageFactory.initElements(driver, this);
 	}
 	
@@ -53,20 +58,34 @@ public class Adidas_Home_Page {
 		}
 	}
 	
-	public void hover_Over_Menu(String menuType) throws InterruptedException
+	public void hover_Over_Menu(String menuType)
 	{
-		switch(menuType) {
+		//this.driver=driver;
+		try
+		{
+				switch(menuType) {
 		
-		case "Men" :
-			genUtil.menuSelection(driver, men_FootWearMenu);
-			break;
-		case "Women": 		
-			//genUtil.menuSelection(driver, women_Menu);
-			genUtil.menuSelection(driver, women_Menu);
-			break;
+				case "Men" :
+				genUtil.menuSelection(driver, men_FootWearMenu);
+				break;
+				
+				case "Women":
+					
+			    genUtil.menuSelection(driver,women_Menu);
+			    //appUtil.menuSelection(driver, women_Menu);
+			    System.out.println("Exception");
+			    break;
+			    
+			    
 		default: 
 			System.out.println("Default Case");
 			
+		 }	
+		}
+		
+		catch (Exception e)
+		{
+			e.printStackTrace();
 		}
 		
 	}
@@ -75,7 +94,7 @@ public class Adidas_Home_Page {
 	{
 		//WebElement menWear=driver.findElement(By.xpath("//a[@id='MEN-FOOTWEAR']"));
 
-		Boolean flag=men_FootWearMenu.isDisplayed();
+		boolean flag=men_FootWearMenu.isDisplayed();
 		Assert.assertTrue(flag, "Men Wear drop down is not displayed");
 		System.out.println("Men Wear drop down is displayed successfully");
 	}
@@ -84,7 +103,7 @@ public class Adidas_Home_Page {
 	{
 		//WebElement menWear=driver.findElement(By.xpath("//a[@id='MEN-FOOTWEAR']"));
 
-		Boolean flag=men_FootWearMenu.isDisplayed();
+		boolean flag=men_FootWearMenu.isDisplayed();
 		Assert.assertTrue(flag, "Men Wear drop down is not displayed");
 		System.out.println("Men Wear drop down is displayed successfully");
 	}
